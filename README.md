@@ -1,4 +1,4 @@
-# Estandarizacion y curación-de-datos-DwC
+# Estandarizacion y curación de datos DwC
 **Estandarización de registros de fauna marina a Darwin Core (DwC)**
 Sistema de información conformado por una red de socios y colaboradores con intereses compartidos para la gestión de información de biodiversidad.
 
