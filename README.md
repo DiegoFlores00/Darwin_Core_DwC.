@@ -45,7 +45,7 @@ La siguiente tabla resume qué tipos de datos pueden representarse en formato Dw
 - Variables ambientales, métodos detallados y protocolos de laboratorio deben documentarse preferentemente como **metadatos**.
 - En proyectos con un fuerte componente ambiental, puede ser recomendable complementar DwC con otros estándares como **EML**, **OBIS-ENV** u otros esquemas especializados.
 
-##Servicios de curación y estandarización
+## Servicios de curación y estandarización
 
 Este repositorio ejemplifica los alcances de la curación y estandarización de datos de biodiversidad bajo el estándar Darwin Core, incluyendo:
 
