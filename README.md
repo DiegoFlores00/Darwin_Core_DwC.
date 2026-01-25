@@ -44,3 +44,13 @@ La siguiente tabla resume qué tipos de datos pueden representarse en formato Dw
 - Darwin Core **no es un estándar ecológico completo**, sino un esquema orientado a la interoperabilidad de datos de biodiversidad.
 - Variables ambientales, métodos detallados y protocolos de laboratorio deben documentarse preferentemente como **metadatos**.
 - En proyectos con un fuerte componente ambiental, puede ser recomendable complementar DwC con otros estándares como **EML**, **OBIS-ENV** u otros esquemas especializados.
+
+##Servicios de curación y estandarización
+Este repositorio ejemplifica los alcances de la curación y estandarización de datos de biodiversidad bajo el estándar Darwin Core, incluyendo:
+
+- Curación de datos de ocurrencia con o sin información espacial (coordenadas geográficas).
+- Estandarización y validación de nombres científicos, incluyendo corrección de errores tipográficos y normalización taxonómica.
+- Conversión de fechas a formato ISO 8601, incluyendo registros con formatos heterogéneos o múltiples fechas.
+- Normalización de campos clave como localidad, identificadores, número de individuos y responsables de identificación.
+- Documentación explícita de decisiones de curación para mantener la trazabilidad de la información original.
+- Preparación de conjuntos de datos compatibles con su publicación en infraestructuras como GBIF u OBIS.
