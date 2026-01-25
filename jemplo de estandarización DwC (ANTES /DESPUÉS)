@@ -1,0 +1,37 @@
+> Las decisiones de curación se tomaron siguiendo las recomendaciones de Darwin Core y buenas prácticas de publicación de datos de GBIF.
+
+Tabla original (fragmento)
+| Especie2 | Fecha3 | Lugar4 | Longitud5 | Latitud | N° individuos | Identificador | N° colección |
+| -------- | ------ | ------ | --------- | ------- | ------------- | ------------- | ------------ |
+
+Tabla estandarizada a Darwin Core
+| Término DwC         | Valor estandarizado | Fuente original  | Decisión de curación    |
+| --------------------| ------------------- | ---------------- | ----------------------- |
+| scientificName      | *Eucalanus inermis* | Especie2         | Nombre aceptado         |
+| eventDate           | 2022-02-22          | Fecha3           | Convertido a ISO 8601   |
+| locality            | NA                  | Lugar4           | Valor ausente           |
+| georeferenceRemarks | Localidad inferida por coordenadas                               |
+| decimalLongitude    | -71.30086           | Longitud5        | Convertido desde DMS    |
+| decimalLatitude     | -28.10036           | Latitud          | Convertido desde DMS    |
+| individualCount     | 14                  | N° de individuos | Campo compatible        |
+| identifiedBy        | Pamela Hidalgo      | Identificador    | Normalización de nombre |
+| catalogNumber       | 41437               | N° de colección  | Conservado              |
+| occurrenceStatus    | present             | implícito        | Asumido por conteo      |
+| taxonRemarks        | No hay subgénero reportado en la fuente original                 |
+
+##Las decisiones de curación se tomaron siguiendo las recomendaciones de Darwin Core y buenas prácticas de publicación de datos de GBIF.
+## Los occurrenceID fueron generados de forma única para garantizar la trazabilidad de los registros.
+
+Ejemplo de tabla DwC final
+| occurrenceID | scientificName      | eventDate  | locality   | decimalLatitude | decimalLongitude | individualCount | identifiedBy   | catalogNumber | occurrenceStatus | basisOfRecord  |
+| ------------ | ------------------- | ---------- | ---------- | --------------- | ---------------- | --------------- | -------------- | ------------- | -----------------|----------------|
+| occ-001      | *Eucalanus inermis* | 2022-02-22 | Antofagasta| -28.10036       | -71.30086        | 14              | Pamela Hidalgo | 41437         | present          |HumanObservation|
+| occ-002      | *Oithona setigera*  | 2023-08-10 | Concepción | -33.80064       | -73.50097        | 3               | Diego Flores   | 6581          | present          |HumanObservation|
+| occ-003      | *Octopus maya*      | 2023-09-10 | Concepción | -33.80064       | -73.50097        | 4               | Verónica García| 32548         | present          |HumanObservation|
+
+## Ejemplo de curación de datos: Este ejemplo se limita al núcleo de ocurrencias de Darwin Core, sin uso de extensiones, con fines demostrativos.
+
+Se presenta un conjunto de registros con problemas comunes en bases de datos de biodiversidad
+(formatos heterogéneos de fecha, coordenadas mixtas, taxonomía ambigua y valores ausentes).
+Estos registros fueron estandarizados siguiendo el estándar Darwin Core,
+manteniendo la trazabilidad de la información original y documentando cada decisión de curación.
