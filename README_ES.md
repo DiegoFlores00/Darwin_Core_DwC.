@@ -1,57 +1,57 @@
-# Estandarizacción y curación de datos en formato DwC.
+# Data Standardization and Curation using Darwin Core (DwC)
 
-**Estandarización de registros de biodiversidad a Darwin Core (DwC)**
+**Standardization of biodiversity records to the Darwin Core (DwC) format**
 
-Sistema de información conformado por una red de socios y colaboradores con intereses compartidos en la gestión, estandarización y publicación de información sobre biodiversidad.
+This repository presents a data management workflow developed by a network of collaborators with shared interests in the curation, standardization, and publication of biodiversity data.
+Its main focus is to improve data quality and interoperability through the application of the Darwin Core standard.
 
-## Objetivos
+## Objetives
 
-- Consolidar una base de datos centralizada con información sobre diversidad, distribución y abundancia de organismos.
-- Estandarizar y formatear conjuntos de datos bajo la estructura básica y las normas del estándar Darwin Core (DwC).
-- Facilitar la interoperabilidad, reutilización y publicación de datos de biodiversidad.
+- Consolidate a centralized database containing information on species diversity, distribution, and abundance.
+- Standardize and format biodiversity datasets according to the core structure and terms of the Darwin Core (DwC) standard.
+- Facilitate data interoperability, reuse, and publication across biodiversity information platforms.
 
-## Público objetivo
+## Target audience
 
-- Investigadores y profesionales  
-- Estudiantes  
-- Gestores de datos de biodiversidad  
-- Ciudadanos interesados en ciencia participativa  
+- Researchers and environmental professionals
+- Undergraduate and graduate students
+- Biodiversity data managers
+- Citizen science practitioners and data contributors 
 
-## Uso del estándar Darwin Core
+## Use of the Darwin Core Standard
 
-Este repositorio utiliza el estándar **Darwin Core (DwC)** para la estructuración y publicación de datos de biodiversidad.  
-Darwin Core está diseñado principalmente para documentar **ocurrencias biológicas**, los eventos asociados a su registro y su localización espacial y temporal.
+This repository applies the Darwin Core (DwC) standard for structuring and publishing biodiversity data.
+Darwin Core is primarily designed to document biological occurrences, the events associated with their recording, and their spatial and temporal context.
 
-Por esta razón, algunos tipos de datos pueden representarse de manera directa dentro de DwC, mientras que otros se documentan únicamente como **metadatos** o mediante **extensiones**.
+As a result, some types of data can be directly represented using DwC terms, while others must be documented as metadata or through extensions.
 
-La siguiente tabla resume qué tipos de datos pueden representarse en formato DwC y sus principales consideraciones.
+The table below summarizes the compatibility of different data types with the Darwin Core standard and key considerations for their use.
 
-## Compatibilidad de tipos de datos con Darwin Core
+## Data Type Compatibility with Darwin Core
 
-| Tipo de dato | Compatibilidad con DwC | Descripción / Consideraciones |
+| Data type | DwC compatibility | Description/considerations|
 |--------------|------------------------|-------------------------------|
-| Ocurrencias y distribución | ✅ Alta | Constituyen el núcleo del estándar DwC mediante términos como `occurrenceID`, `scientificName`, `eventDate` y `locality`. |
-| Presencia / ausencia | ⚠️ Media | Se documenta con `occurrenceStatus`; las ausencias verdaderas requieren un diseño de muestreo claramente definido. |
-| Abundancia y conteos individuales | ✅ Alta | Puede representarse usando `individualCount`, `organismQuantity` y `organismQuantityType`. |
-| Biomasa, tamaños y estados de vida | ⚠️ Media | Estados de vida (`lifeStage`) y biomasa pueden incluirse; los datos morfométricos detallados presentan limitaciones. |
-| Medidas abióticas | ⚠️ Media | Se incorporan mediante la extensión `MeasurementOrFact`; DwC no es un estándar ambiental específico. |
-| Medidas bióticas | ⚠️ Media | Pueden documentarse con `MeasurementOrFact` o campos descriptivos, con capacidad limitada para interacciones complejas. |
-| Métodos de muestreo y áreas de estudio | ✅ Alta (metadatos) | Se documentan mediante `samplingProtocol`, `eventRemarks`, `locationID` y metadatos del conjunto de datos. |
-| Protocolos de procesamiento de muestras | ❌ Baja | No forman parte del objetivo principal de DwC; se recomienda documentarlos en metadatos (EML) o documentación externa. |
+| Occurrence and distribution data| ✅ High | Core of DwC using terms such as `occurrenceID`, `scientificName`, `eventDate` y `locality`. |
+| Presence/absence data | ⚠️ Medium | Documented using `occurrenceStatus`; true absences require a clearly defined sampling desing. |
+| Abundance and individual counts | ✅ High | Represented using `individualCount`, `organismQuantity` and `organismQuantityType`. |
+| Biomas, size, and life stages | ⚠️ Medium | Life stages  (`lifeStage`) and biomass can be included; detailed morphometrics have limitations. |
+| Abiotic measurements | ⚠️ Medium | Included via the `MeasurementOrFact`; extension DwC is not an enviromental data standard. |
+| Biotic measurements | ⚠️ Medium | Can be documented using `MeasurementOrFact` or descriptive fields, with limited support for complex interactions. |
+| Sampling methods and study areas | ✅ High (metadata) | Documented using `samplingProtocol`, `eventRemarks`, `locationID`, and dataset-level metadata. |
+| Sample processing protocols | ❌ Low | Outside DwC's main scope; recommended to document in EML metadata or external documentation. |
 
-## Consideraciones finales
+## Final cosiderations 
+- Darwin Core is **not a comprehensive ecological standart**, but, a schema focused on biodiversity data interoperability.
+- Environmental variables, datailed methodologies, and laboratory protocols should be documented primarily as **metadata**.
+- Projects with a strong enviromental or oceanographic standars such as **EML**, **OBIS-ENV**, or domain-specific schemas.
 
-- Darwin Core **no es un estándar ecológico completo**, sino un esquema orientado a la interoperabilidad de datos de biodiversidad.
-- Variables ambientales, métodos detallados y protocolos de laboratorio deben documentarse preferentemente como **metadatos**.
-- En proyectos con un fuerte componente ambiental, puede ser recomendable complementar DwC con otros estándares como **EML**, **OBIS-ENV** u otros esquemas especializados.
+## Data Curation and Standardization Setvices
 
-## Servicios de curación y estandarización
+This repository demonstrates the scope and capabilities of biodiversity data curation and standarization under the Darwin Core framework including:
 
-Este repositorio ejemplifica los alcances de la curación y estandarización de datos de biodiversidad bajo el estándar Darwin Core, incluyendo:
-
-- Curación de datos de ocurrencia con o sin información espacial (coordenadas geográficas).
-- Estandarización y validación de nombres científicos, incluyendo corrección de errores tipográficos y normalización taxonómica.
-- Conversión de fechas a formato ISO 8601, incluyendo registros con formatos heterogéneos o múltiples fechas.
-- Normalización de campos clave como localidad, identificadores, número de individuos y responsables de identificación.
-- Documentación explícita de decisiones de curación para mantener la trazabilidad de la información original.
-- Preparación de conjuntos de datos compatibles con su publicación en infraestructuras como GBIF u OBIS.
+- Curation of occurrence records with or without spatial information (geographic coordinates).
+- Standarization and validation of science frames, including correction of typographical errors and taxonomic normalization.
+- Conversion of dates to ISO 8601 format, including records with heterogeneous or multiple date formats.
+- Normalization of key fields such as **locality. indentifers, individual counts, and taxonomic authorities**.
+- Explicit documentation of curation decisions to ensure traceability of the original data.
+- Preparation of datasets compatible with publication in infrastructures such as **GBIF** and **OBIS**.
